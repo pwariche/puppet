@@ -1,0 +1,183 @@
+{
+  "source": "https://github.com/NetdevOps/puppet-netdev-stdlib",
+  "project_page": "https://github.com/NetdevOps/puppet-netdev-stdlib",
+  "checksums": {
+    "lib/puppet/type/netdev_lag.rb": "02666db9ea113f0dea2bfbcb11fcf948",
+    "lib/puppet/type/netdev_l2_interface.rb": "da40cd5e29697efa4c972cd3d362a42b",
+    "lib/puppet/type/netdev_vlan.rb": "a38b61e126032c99ce047e01b52ecdf7",
+    "lib/puppet/type/netdev_interface.rb": "bf40241fe83a711c852c613e43b5473e",
+    "README.md": "aeb0038284eab03983a19e69662cca4b",
+    "lib/puppet/type/netdev_device.rb": "57a1a30a958dd8cede6a48ecedbd8f11",
+    "CHANGELOG.md": "c2a773379cdb8170a2c6dae0dc3ab9ce",
+    "LICENSE": "8c07ee0721e8d150f9f7c32fcea0ad48",
+    "NETDEV-STDLIB.md": "0f85e3d11dffb387d8bc4168bc58e5e7",
+    "Modulefile": "da2905b7f87ee6481108a975d9527df6"
+  },
+  "license": "BSD-2",
+  "dependencies": [
+
+  ],
+  "types": [
+    {
+      "parameters": [
+        {
+          "name": "name",
+          "doc": "The VLAN name"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ensure",
+          "doc": "The basic property that the resource should be in.  Valid values are `present`, `absent`."
+        },
+        {
+          "name": "active",
+          "doc": "Config activation  Valid values are `true`, `false`.  Requires features activable."
+        },
+        {
+          "name": "description",
+          "doc": "The VLAN Description  Requires features describable."
+        },
+        {
+          "name": "vlan_id",
+          "doc": "The VLAN ID"
+        },
+        {
+          "name": "no_mac_learning",
+          "doc": "Do not learn MAC addresses; used for 2-port VLANs  Valid values are `true`, `false`.  Requires features no_mac_learning."
+        }
+      ],
+      "name": "netdev_vlan",
+      "doc": "Network Device VLAN"
+    },
+    {
+      "parameters": [
+        {
+          "name": "name",
+          "doc": "The switch interface name"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ensure",
+          "doc": "The basic property that the resource should be in.  Valid values are `present`, `absent`."
+        },
+        {
+          "name": "active",
+          "doc": "Config activation  Valid values are `true`, `false`.  Requires features activable."
+        },
+        {
+          "name": "vlan_tagging",
+          "doc": "The switch interface vlan-tagging mode  Valid values are `enable`, `disable`."
+        },
+        {
+          "name": "description",
+          "doc": "The switch interface description."
+        },
+        {
+          "name": "tagged_vlans",
+          "doc": "Array of VLAN names used for tagged packets"
+        },
+        {
+          "name": "untagged_vlan",
+          "doc": "VLAN used for untagged packets"
+        }
+      ],
+      "name": "netdev_l2_interface",
+      "doc": "Ethernet layer2 (switch-port) interface"
+    },
+    {
+      "parameters": [
+        {
+          "name": "name",
+          "doc": "Interface Name"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ensure",
+          "doc": "The basic property that the resource should be in.  Valid values are `present`, `absent`."
+        },
+        {
+          "name": "active",
+          "doc": "Config activation  Valid values are `true`, `false`.  Requires features activable."
+        },
+        {
+          "name": "admin",
+          "doc": "Interface admin state [up*|down]  Valid values are `up`, `down`."
+        },
+        {
+          "name": "description",
+          "doc": "Interface physical port description"
+        },
+        {
+          "name": "mtu",
+          "doc": "Maximum Transmission Unit"
+        },
+        {
+          "name": "speed",
+          "doc": "Link speed [auto*|10m|100m|1g|10g]  Valid values are `auto`, `1g`, `10g`, `100m`, `10m`."
+        },
+        {
+          "name": "duplex",
+          "doc": "Duplex mode [auto*|full|half]  Valid values are `auto`, `full`, `half`."
+        }
+      ],
+      "name": "netdev_interface",
+      "doc": "Network Device Physical Interface"
+    },
+    {
+      "parameters": [
+        {
+          "name": "name",
+          "doc": "The network device name can be any placeholder value"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ensure",
+          "doc": "The basic property that the resource should be in.  Valid values are `present`, `absent`."
+        }
+      ],
+      "name": "netdev_device",
+      "doc": "Network device resource to support autorequire relationships"
+    },
+    {
+      "parameters": [
+        {
+          "name": "name",
+          "doc": "LAG Name"
+        }
+      ],
+      "properties": [
+        {
+          "name": "ensure",
+          "doc": "The basic property that the resource should be in.  Valid values are `present`, `absent`."
+        },
+        {
+          "name": "active",
+          "doc": "Config activation  Valid values are `true`, `false`.  Requires features activable."
+        },
+        {
+          "name": "lacp",
+          "doc": "LACP [ passive | active | disabled* ]  Valid values are `active`, `passive`, `disabled`."
+        },
+        {
+          "name": "minimum_links",
+          "doc": "Number of active links required for LAG to be 'up'"
+        },
+        {
+          "name": "links",
+          "doc": "Array of Physical Interfaces"
+        }
+      ],
+      "name": "netdev_lag",
+      "doc": "Network Device Link Aggregation Group"
+    }
+  ],
+  "summary": "Type definitions for Networking Device (netdev) Library",
+  "description": "Netdev is a vendor-neutral network abstraction framework developed by Juniper Networks and contributed freely to the DevOps community.",
+  "name": "netdevops-netdev_stdlib",
+  "author": "Jermey Schulman & NetdevOps Contributors",
+  "version": "1.0.0"
+}

@@ -1,0 +1,33 @@
+node default {
+  # This is where you can declare classes for all nodes.
+  # Example:
+  #   class { 'my_class': }
+  if $operatingsystem == "CumulusLinux" {
+    netdev_device { $hostname: }
+    include switchbase
+  }
+}
+
+class switchbase {
+ include motd
+}
+
+user { 'cumulus':
+    ensure => 'present',
+    groups => ['sudo', 'cumulus'],
+    require => User['cumulus'],
+    home => '/home/cumulus',
+    managehome => true,
+    password => '$6$EnqL4.igPaPcRes$chd9AdyGweHJnZNrTZIjErjQwTrkr1c0ZVcbqzmwMKAlO/vltqa9DFi7C/e74F2Ms9LyeVKz3fo1SbsVkprzG1',
+    shell => '/bin/bash',
+}
+
+netdev_interface { "swp1":
+    ensure => (present),         
+    active => (true),        
+    admin => (up),       
+    description => "swp1 interface",       
+    speed => 1g, 
+    duplex => (auto),              
+    mtu => 1500
+}

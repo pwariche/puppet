@@ -1,0 +1,48 @@
+{
+  "requirements": [
+    {
+      "name": "pe",
+      "version_requirement": "3.x"
+    },
+    {
+      "name": "puppet",
+      "version_requirement": ">= 2.0.0 <4.0.0"
+    }
+  ],
+  "name": "cumuluslinux-netdev_stdlib_cumulus_linux",
+  "version": "0.0.1",
+  "source": "https://github.com/CumulusNetworks/puppet-netdev-stdlib-cumulus-linux",
+  "author": "Sergey Sudakovich, Cumulus Networks",
+  "license": "Apache License, Version 2.0",
+  "summary": "Cumulus Linux netdev stdlib",
+  "description": "Netdev provides a set of network resource abstractions for automating network device configuration using Puppet, this provider code is specific to Cumulus Linux.",
+  "project_page": "https://github.com/CumulusNetworks/puppet-netdev-stdlib-cumulus-linux",
+  "dependencies": [
+    {
+      "name": "netdevops/netdev_stdlib",
+      "version_requirement": ">= 1.0.0"
+    }
+  ],
+  "types": [
+
+  ],
+  "checksums": {
+    "Gemfile": "b752c290d1ff831eb48ca1aa5c5d0c71",
+    "Modulefile": "b765177bd97c69fe82aeeae4bdaf830f",
+    "README.md": "b3f769f095b7ff3683ae7d3ce12f5d36",
+    "Rakefile": "2e5dea091308aea0dc822af4a81f991c",
+    "lib/puppet/provider/cumulus/bond.rb": "0c6276827efdf8039b33f24920725099",
+    "lib/puppet/provider/cumulus/cumulus_parent.rb": "27f78b8dcf05298c12de8fffd7ed946e",
+    "lib/puppet/provider/cumulus/network_interfaces.rb": "eff0fb7bb19e095961cb29f3b920f225",
+    "lib/puppet/provider/netdev_device/cumulus.rb": "197e698a930778c8827af0505552b48f",
+    "lib/puppet/provider/netdev_interface/cumulus.rb": "ddfc8a68f86d9680310a291fb4d5ede9",
+    "lib/puppet/provider/netdev_l2_interface/cumulus.rb": "4b63565b28c226ec1cfef794e6977772",
+    "lib/puppet/provider/netdev_l3_interface/cumulus.rb": "eed4172103bcda11c8246e7016e3021b",
+    "lib/puppet/provider/netdev_lag/cumulus.rb": "9598d45dd34c6dd0478cbae3f36e48c5",
+    "lib/puppet/provider/netdev_route/cumulus.rb": "8b0ce62f4f1af0677dce6e54859bd4f0",
+    "lib/puppet/provider/netdev_vlan/cumulus.rb": "14ecd2981c1b68a01a6706a6d0bef972",
+    "spec/fixtures/manifests/site.pp": "d41d8cd98f00b204e9800998ecf8427e",
+    "spec/network_interfaces_spec.rb": "1c9224b21b3b45cdf8ecc476a7cf69ad",
+    "spec/spec_helper.rb": "7291fc3e78a250af0e2a4089a4b7e26c"
+  }
+}
