@@ -20,4 +20,4 @@ class motd {
  source => "puppet:///files/motd"
  }
 }
-merde
+merde a toi
