@@ -19,5 +19,5 @@ class motd {
  group => root,
  source => "puppet:///files/motd"
  }
+fuck the puppet
 }
-merde a toi
